@@ -1,0 +1,27 @@
+step 1. eksctl create cluster -f cluster.yaml
+(this should create the ec2 and eks cluster, also check cloud formation)
+to checkit created run kubectl get nodes.
+If all is well, you should see the worker node(s) in a Ready state and also
+run kubectl config get-cluster
+to list the pods, run kubectl get pods -A , kubectl get nodes
+step 2: create a namespace.
+step 3 create deployment
+to check kubectl get deploymemt -n stagging
+step 4. create the service
+to see all created services run kubectl get all -n stagging
+
+Now we need services from the internet to access our pods in our cluster.
+
+we use subnet.
+step 5. updated the subnet tagunder VPC  with the details in the subnet-tags.txt file 
+step 6:  create an IAM policy that has permission to create a loadbalancer on AWS.
+use the iam policy command in the commands.txt file.
+step 7. install aws load balancer controller.
+
+
+# docker build -t chinoyerem/sample-k8s-nest-project . to build
+# docker push chinoyerem/nestjs-k8s  : to push
+
+
+
+

@@ -1,0 +1,15 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: poc
+  region: us-east-1
+  tags:
+    project: poc-project
+
+# where you specify name, size and number of ec2 instances running your worker node
+nodeGroups:
+  - name: worker-node
+    instanceType: m5.large
+    desiredCapacity: 3

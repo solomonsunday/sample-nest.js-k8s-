@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: nestjs-k8s
+  namespace: stagging
+  labels:
+    app: nestjs-k8s
+spec: 
+  selector:
+    matchLabels:
+      app: nestjs-k8s
+  replicas: 3
+  template:
+    metadata: 
+      labels:
+        app: nestjs-k8s
+    spec: 
+      containers:
+       - name: nestjs-k8s
+         image: chinoyerem/sample-k8s-nest-project
+        #  here downwards is used for aws cloud deployment
+         ports:
+         - containerPort: 3000
+
+         #  helps us to manage a pod resources here is for k8s cluster
+         resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+
