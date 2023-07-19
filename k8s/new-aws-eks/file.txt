@@ -1,0 +1,7 @@
+user arn: arn:aws:iam::893352951620:user/developer
+region: us-east-1
+
+
+
+# docker build -t chinoyerem/sample-k8s-nest-project . to build
+# docker push chinoyerem/nestjs-k8s  : to push
