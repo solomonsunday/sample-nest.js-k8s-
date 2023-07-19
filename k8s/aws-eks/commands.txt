@@ -5,11 +5,12 @@ aws iam create-policy \
 ---
 
 eksctl utils associate-iam-oidc-provider --cluster lil-eks --approve
+eksctl utils associate-iam-oidc-provider --cluster poc --approve
 
 --- 
  
 eksctl create iamserviceaccount \
-    --cluster=lil-eks \
+    --cluster=poc \
     --name=aws-load-balancer-controller \
     --namespace=kube-system \
     --attach-policy-arn=arn:aws:iam::893352951620:policy/AWSLoadBalancerControllerIAMPolicy \

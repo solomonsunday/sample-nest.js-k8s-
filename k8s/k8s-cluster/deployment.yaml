@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: nestjs-k8s
-  namespace: stagging
+  namespace: local
   labels:
     app: nestjs-k8s
 spec: 
   selector:
     matchLabels:
       app: nestjs-k8s
-  replicas: 3
+  replicas: 1
   template:
     metadata: 
       labels:
@@ -17,7 +17,7 @@ spec:
     spec: 
       containers:
        - name: nestjs-k8s
-         image: chinoyerem/sample-k8s-nest-project
+         image: chinoyerem/vm-app
         #  here downwards is used for aws cloud deployment
          ports:
          - containerPort: 3000

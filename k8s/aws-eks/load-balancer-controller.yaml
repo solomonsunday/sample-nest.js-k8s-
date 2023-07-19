@@ -804,7 +804,7 @@ spec:
       - args:
         - --cluster-name=poc
         - --ingress-class=alb
-        - --aws-vpc-id=vpc-0bbd4e8aa33d77933
+        - --aws-vpc-id=vpc-0e3573d70a3f8f3a5
         - --aws-region=us-east-1
         image: public.ecr.aws/eks/aws-load-balancer-controller:v2.4.7
         livenessProbe:
